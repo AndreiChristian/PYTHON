@@ -1,11 +1,19 @@
 blockchain = [[19]]
 
 
-def add_value(transaction_amount):
-    blockchain.append([blockchain[-1],transaction_amount])
-    print(blockchain)
+def get_last_blockchain_value():
+    return blockchain[-1]
 
+
+def add_value(transaction_amount):
+
+    blockchain.append([get_last_blockchain_value(), transaction_amount])
+
+
+user_amount = float(input("Your transaction amount:  "))
+add_value(transaction_amount=(user_amount))
 add_value(10)
-add_value(12)
+add_value(transaction_amount=12)
 add_value(32)
 
+print(blockchain)
