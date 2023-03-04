@@ -6,7 +6,6 @@ def get_last_blockchain_value():
 
 
 def add_value(transaction_amount):
-
     blockchain.append([get_last_blockchain_value(), transaction_amount])
 
 
@@ -31,13 +30,16 @@ while (True):
     print("Please choose!")
     print("1. Add a new transaction value!")
     print("2. Output the the blockchain blocks!")
+    print("q: Quit")
     user_choice = get_user_choice()
     if user_choice == "1":
         user_value = get_transaction_value()
         add_value(user_value)
     elif user_choice == "2":
         print_blockchain()
+    elif user_choice == "q":
+        break
     else:
-        print("Do you want to quit?")
+        print("Invalid input!")
 
 print("done")
