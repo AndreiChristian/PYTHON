@@ -10,12 +10,11 @@ def add_value(transaction_amount):
     blockchain.append([get_last_blockchain_value(), transaction_amount])
 
 
-user_amount = float(input("Your transaction amount:  "))
-add_value(transaction_amount=(user_amount))
-add_value(10)
-add_value(transaction_amount=12)
-add_value(32)
+while (True):
+    user_amount = float(input("Your transaction amount:  "))
+    add_value(transaction_amount=user_amount)
+    for block in blockchain:
+        print("Outputting block")
+        print(block)
 
-for block in blockchain:
-    print("Outputting block")
-    print(block)
+print("done")
