@@ -24,7 +24,13 @@ def add_value(sender, recipient, amount=1.0):
 
 
 def mine_block():
-    pass
+    last_block = blockchain[-1]
+    block = {
+        "previous_hash": "XYZ",
+        "index": len(blockchain),
+        "transactions": open_transactions
+    }
+    blockchain.append(block)
 
 
 def get_transaction_value():
