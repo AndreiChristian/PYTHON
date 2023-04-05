@@ -30,10 +30,8 @@ def add_value(sender, recipient, amount=1.0):
 
 def mine_block():
     last_block = blockchain[-1]
-    hashed_block = ""
-    for keys in last_block:
-        value = last_block[keys]
-        hashed_block = hashed_block + str(value)
+    hashed_block = "-".join([last_block[key] for key in last_block])
+    print(hashed_block)
     print(hashed_block)
     block = {
         "previous_hash": "XYZ",
