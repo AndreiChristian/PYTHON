@@ -33,6 +33,24 @@ def print_blockchain():
         print(block)
 
 
+def verify_chain():
+    """Verify the current blockchain and return True if it's valid, False otherwise"""
+    print("Verifying Blockchain")
+    index = 0
+    is_valid = True
+    for block in blockchain:
+        if index == 0:
+            index += 1
+            continue
+        if block[0] == blockchain[index-1]:
+            is_valid = True
+        else:
+            is_valid = False
+            break
+        index += 1
+    return is_valid
+
+
 while (True):
     print("Please choose!")
     print("1. Add a new transaction value!")
@@ -53,5 +71,8 @@ while (True):
         break
     else:
         print("Invalid input!")
+    if not verify_chain():
+        print("Invalid blockchain!")
+        break
 
 print("done")
